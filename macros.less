@@ -1,0 +1,62 @@
+
+// macros.less, by @f03lipe
+// Home-made macros for less.
+
+@import "fontface.less";
+@import "lesselements.less";
+@import "normalize.less";
+@import "shadow.less";
+@import "resetter.less";
+
+// Set to use fontface
+@fontsRoot: "/static/fonts/";
+
+.gray(@percent) {
+  color: lighten(@black, percentage(@percent / 100));
+}
+
+.trbl(@all:0) {
+  top: @all;
+  right: @all;
+  bottom: @all;
+  left: @all;
+}
+
+.trbl(@vertical,@horizontal) {
+  top: @vertical;
+  right: @horizontal;
+  bottom: @vertical;
+  left: @horizontal;
+}
+
+.trbl(@t,@horizontal,@b) {
+  top: @t;
+  right: @horizontal;
+  bottom: @b;
+  left: @horizontal;
+}
+
+.trbl(@t,@r,@b,@l) {
+  top: @t;
+  right: @r;
+  bottom: @b;
+  left: @l;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+.bordered (@color:black) {
+  border: 1px solid @color;
+}
+
+.sprite (@x, @y, @size) {
+   background-position: -(@x*@size) -(@y*@size);
+}
+
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing:    @type;
+    box-sizing:         @type;
+}

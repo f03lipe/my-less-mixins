@@ -1,0 +1,29 @@
+
+// Fontface
+
+@fontsRoot: "/static/fonts/";
+
+.fontface(@fontName, @weight)
+{
+    font-family: @fontName;
+    font-weight: @weight;
+    font-style: normal;
+    src: url("@{fontsRoot}/static/fonts/@{fontName}-@{weight}.eot");
+    src:
+        url("@{fontsRoot}@{fontName}-@{weight}.ttf") format('truetype'),
+        url("@{fontsRoot}@{fontName}-@{weight}.woff") format('woff'),
+        url("@{fontsRoot}@{fontName}-@{weight}.eot?#iefix") format('embedded-opentype'),
+        url("@{fontsRoot}@{fontName}-@{weight}.svg#DistantGalaxyRegular") format('svg');
+}
+
+.fontface(@fontName)
+{
+    font-family: @fontName;
+    font-style: normal;
+    src: url("@{fontsRoot}/static/fonts/@{fontName}.eot");
+    src:
+        url("@{fontsRoot}@{fontName}.ttf") format('truetype'),
+        url("@{fontsRoot}@{fontName}.woff") format('woff'),
+        url("@{fontsRoot}@{fontName}.eot?#iefix") format('embedded-opentype'),
+        url("@{fontsRoot}@{fontName}.svg#DistantGalaxyRegular") format('svg');
+}

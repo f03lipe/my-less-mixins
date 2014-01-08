@@ -1,0 +1,40 @@
+
+.transition (@prop: all, @time: .2s, @ease: linear) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+.border-radius (@r) {
+    -webkit-border-radius: @r;
+    -moz-border-radius: @r;
+    border-radius: @r;
+}
+
+.blur (@p: 3px) {
+  -webkit-filter: blur(@p);
+  -moz-filter: blur(@p);
+  -o-filter: blur(@p);
+  -ms-filter: blur(@p);
+  filter: blur(@p);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+}
+
+.unblur () {
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: blur(0);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+}
