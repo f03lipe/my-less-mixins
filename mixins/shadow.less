@@ -1,5 +1,5 @@
 
-// shadow stuff
+/* Shadow stuff. */
 
 .box-shadow (@blur: 5px, @alpha: .5) when (isnumber(@alpha)) {
   -webkit-box-shadow: 0 0 @blur rgba(0, 0, 0, @alpha);
@@ -49,8 +49,34 @@
   text-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
 }
 
-.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+/* 
+** .inner-shadow. use:
+** ·(@dx, @dy, @blackShadowOpacity)
+** ·(@dx, @dy, @shadowColor)
+** ·(@dx, @dy, @blur, @blackShadowOpacity)
+** ·(@dx, @dy, @blur, @shadowColor)
+**/
+
+.inner-shadow(@horizontal:0, @vertical:1px, @alpha:0.4) when(isnumber(@alpha)) {
+  -webkit-box-shadow: inset @horizontal @vertical rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @color:#000) when(iscolor(@color)) {
+  -webkit-box-shadow: inset @horizontal @vertical @color;
+  -moz-box-shadow: inset @horizontal @vertical @color;
+  box-shadow: inset @horizontal @vertical @color;
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha:0.4) when (isnumber(@alpha)) {
   -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
   -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
   box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @color:#000) when (iscolor(@color)) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur @color;
+  -moz-box-shadow: inset @horizontal @vertical @blur @color;
+  box-shadow: inset @horizontal @vertical @blur @color;
 }
