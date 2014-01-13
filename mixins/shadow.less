@@ -7,6 +7,12 @@
   box-shadow: none;  
 }
 
+.no-text-shadow() {
+  -webkit-text-shadow: none;
+  -moz-text-shadow: none;
+  text-shadow: none;
+}
+
 /* 
 ** .box-shadow. use:
 ** ·(@blur, @blackShadowOpacity)
@@ -65,7 +71,7 @@
   text-shadow: @x @y @blur @color;
 }
 
-.text-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: .5) {
+.text-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: .5) when (isnumber(@alpha)) {
   -webkit-text-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
   -moz-text-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
   text-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
