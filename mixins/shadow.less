@@ -1,6 +1,21 @@
 
 // Shadow stuff. 
 
+.no-box-shadow () {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;  
+}
+
+/* 
+** .box-shadow. use:
+** ·(@blur, @blackShadowOpacity)
+** ·(@dx, @dy, @blur, @blackShadowOpacity)
+** ·(@dx, @dy, @blur, @shadowColor)
+** ·(@dx, @dy, @dist, @blackShadowOpacity)
+** ·(@dx, @dy, @dist, @shadowColor)
+**/
+
 .box-shadow (@blur: 5px, @alpha: .5) when (isnumber(@alpha)) {
   -webkit-box-shadow: 0 0 @blur rgba(0, 0, 0, @alpha);
   -moz-box-shadow: 0 0 @blur rgba(0, 0, 0, @alpha);
@@ -31,16 +46,23 @@
   box-shadow: @x @y @d @blur @alpha;
 }
 
+/* 
+** .text-shadow. use:
+** ·(@blur, @blackShadowOpacity)
+** ·(@dx, @dy, @blur, @blackShadowOpacity)
+** ·(@dx, @dy, @blur, @shadowColor)
+**/
+
 .text-shadow (@blur: 5px, @alpha: 1) when (isnumber(@alpha)) {
   -webkit-text-shadow: 0 0 @blur rgba(0, 0, 0, @alpha);
   -moz-text-shadow: 0 0 @blur rgba(0, 0, 0, @alpha);
   text-shadow: 0 0 @blur rgba(0, 0, 0, @alpha);
 }
 
-.text-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: black) when (iscolor(@alpha)) {
-  -webkit-text-shadow: @x @y @blur @alpha;
-  -moz-text-shadow: @x @y @blur @alpha;
-  text-shadow: @x @y @blur @alpha;
+.text-shadow (@x: 0px, @y: 3px, @blur: 5px, @color: black) when (iscolor(@color)) {
+  -webkit-text-shadow: @x @y @blur @color;
+  -moz-text-shadow: @x @y @blur @color;
+  text-shadow: @x @y @blur @color;
 }
 
 .text-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: .5) {
